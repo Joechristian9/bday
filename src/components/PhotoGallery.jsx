@@ -17,9 +17,11 @@ function PhotoGallery({ onBack }) {
   return (
     <div className="w-full max-w-4xl animate-[fadeInUp_1s_ease-out]">
       <div className="bg-white/95 rounded-3xl shadow-2xl p-6 sm:p-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-blue-500 text-center mb-8">
-          Beautiful Memories 📸
-        </h2>
+        <div className="mb-8 min-h-[60px] flex items-center justify-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-blue-500 text-center typing-text-loop">
+            Happy Birthday, Ali!
+          </h2>
+        </div>
 
         {/* Photo Display */}
         <div className="relative mb-8">
@@ -30,26 +32,28 @@ function PhotoGallery({ onBack }) {
               className="w-full h-full object-cover"
             />
           </div>
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevPhoto}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-all hover:scale-110 shadow-lg"
-          >
-            ←
-          </button>
-          <button
-            onClick={nextPhoto}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-all hover:scale-110 shadow-lg"
-          >
-            →
-          </button>
         </div>
 
         {/* Photo Counter */}
-        <p className="text-center text-gray-600 mb-6">
+        <p className="text-center text-gray-600 mb-4">
           {currentIndex + 1} / {photos.length}
         </p>
+
+        {/* Navigation Arrows - Below Photo */}
+        <div className="flex gap-4 justify-center mb-8">
+          <button
+            onClick={prevPhoto}
+            className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition-all hover:scale-110 shadow-lg text-xl font-bold"
+          >
+            ← Previous
+          </button>
+          <button
+            onClick={nextPhoto}
+            className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition-all hover:scale-110 shadow-lg text-xl font-bold"
+          >
+            Next →
+          </button>
+        </div>
 
         {/* Back Button */}
         <button
